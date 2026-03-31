@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: studentski-asistent-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/studentski_db
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+jwt:
+  secret: ${JWT_SECRET:dev-secret-mora-biti-dovoljno-dug-za-hs256-min-256-bitova-ovaj-string-je-dug}
+
+auth:
+  service:
+    base-url: ${AUTH_SERVICE_BASE_URL:http://localhost:8081}
+
+# Env INTERNAL_SERVICE_TOKEN se ovde eksplicitno veže — pouzdanije od @Value("${INTERNAL_SERVICE_TOKEN}") u kodu.
+internal:
+  service:
+    token: ${INTERNAL_SERVICE_TOKEN:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

@@ -1,0 +1,2 @@
+CREATE DATABASE studentski_db;
+GRANT ALL PRIVILEGES ON DATABASE studentski_db TO app;
