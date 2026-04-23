@@ -273,7 +273,7 @@ class _YearsTabState extends State<_YearsTab> {
                           separatorBuilder: (_, _) => const Divider(height: 1),
                           itemBuilder: (_, i) {
                             final y = list[i];
-                            return ListTile(title: Text('Godina ${y.yearNumber}'), subtitle: Text('id: ${y.id}'));
+                            return ListTile(title: Text('Godina ${y.yearNumber}'));
                           },
                         );
                       },
